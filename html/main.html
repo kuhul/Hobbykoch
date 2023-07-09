@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Index</title>
+<link rel="stylesheet" href="../css/main_grid.css">
+<link rel="stylesheet" href="../css/main.css">
+<link rel="stylesheet" href="../css/login.css">
+</head>
+
+<!-- problem ist das slideIndex var nicht bestimmt ist -->
+<body class="grid_container">
+
+    <!-- header part -->
+
+    <header class="header_section">
+
+        <div id="header_logo">
+            <a href="main.html">
+            <img src="../pictures/3448102.png" alt="Logo" style="height: 6em; width: auto;">
+            </a>
+        </div>
+
+        <div id="header_login">
+            <button type="button" class="login_button" onclick="document.getElementById('id01').style.display='block'">
+                <span>
+                    Anmelden
+                </span>
+            </button>
+        </div>
+
+    </header>
+
+
+    <!-- login menu -->
+    <div id="id01" class="modal">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+    
+        <form class="modal-content animate" action="/action_page.php">
+        
+            <div class="container">
+                <label for="uname"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="uname" required>
+        
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+        
+                <button type="submit">Login</button>
+                <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
+            </div>
+        
+            <div class="container" style="background-color:#f1f1f1">
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+            </div>
+
+        </form>
+    </div>
+    <!-- end of login -->
+
+
+    
+    <nav class="nav_section">
+
+        <div class="search_container">
+
+            <input type="text" id="mySearch" onkeyup="filterFunction()" placeholder="Finde dein Essen.." title="Type in a food">
+            <button type="button" id="btn_sea" onclick="myFunction()"></button>
+
+            <div class="dropdown">
+                
+                <div id="myDropdown" class="dropdown-content">
+
+                    <a href="recipes/recipe1.html">Gulasch</a>
+                    <a href="recipes/recipe2.html">Reispfanne</a>
+                    <a href="recipes/recipe3.html">Käsekuchen</a>
+                    <a href="recipes/recipe4.html">Rigatoni al forno</a>
+                    <a href="recipes/recipe5.html">Burger</a>
+                    <a href="recipes/recipe6.html">Benedict</a>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="top_nav">
+            <a href="cookbook.html">Mein Kochbuch</a>
+            <a href="search.html">Rezepte</a>
+        </div>
+    </nav>
+
+    <!-- main section -->
+
+    <main class="main_section">
+
+        <!-- part 1 -->
+        <div class="scroll">
+            
+            <h2>Top Auswahl</h2>
+
+            <div class="container">
+
+                <a href="recipes/recipe2.html" class="mySlides">
+                  <div class="numbertext">1 / 6</div>
+                    <img src="../pictures/14f5a4a83041cf6c63346b046e766dc5_id70354_gemuesereispfanne05.jpg" style="width:100%">
+                </a>
+              
+                <a href="recipes/recipe1.html" class="mySlides">
+                  <div class="numbertext">2 / 6</div>
+                    <img src="../pictures/Gulasch-Sous-vide-min.jpg" style="width:100%">
+                </a>
+              
+                <a href="recipes/recipe1.html" class="mySlides">
+                  <div class="numbertext">3 / 6</div>
+                    <img src="../pictures/rigatoni-al-forno.jpg" style="width:100%">
+                </a>
+              
+                <a href="recipes/recipe1.html" class="mySlides">
+                  <div class="numbertext">4 / 6</div>
+                    <img src="../pictures/Burger_selber_machen_rezept.jpg" style="width:100%">
+                </a>
+              
+                <a href="recipes/recipe1.html" class="mySlides">
+                  <div class="numbertext">5 / 6</div>
+                    <img src="../pictures/P1190053.jpg" style="width:100%">
+                </a>
+              
+                <a href="recipes/recipe1.html" class="mySlides">
+                  <div class="numbertext">6 / 6</div>
+                    <img src="../pictures/Gulasch-Sous-vide-min.jpg" style="width:100%">
+                </a>
+              
+                <!-- Next and previous buttons -->
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+              
+                <!-- Image text -->
+                <div class="caption-container">
+                  <p id="caption"></p>
+                </div>
+              
+                <!-- Thumbnail images -->
+                <div class="row">
+                  <div class="column">
+                    <img class="demo cursor" src="../pictures/rezept2.png" style="width:100%" onclick="currentSlide(1)" alt="Reispfanne">
+                  </div>
+                  <div class="column">
+                    <img class="demo cursor" src="../pictures/rezept1.png" style="width:100%" onclick="currentSlide(2)" alt="Gulasch">
+                  </div>
+                  <div class="column">
+                    <img class="demo cursor" src="../pictures/rezept4.png" style="width:100%" onclick="currentSlide(3)" alt="Rigatoni">
+                  </div>
+                  <div class="column">
+                    <img class="demo cursor" src="../pictures/rezept5.png" style="width:100%" onclick="currentSlide(4)" alt="Burger">
+                  </div>
+                  <div class="column">
+                    <img class="demo cursor" src="../pictures/rezept6.png" style="width:100%" onclick="currentSlide(5)" alt="Brot">
+                  </div>
+                  <div class="column">
+                    <img class="demo cursor" src="../pictures/rezept4.png" style="width:100%" onclick="currentSlide(6)" alt="Auflauf">
+                  </div>
+                </div>
+
+            </div>
+
+        <!-- part 2 -->
+        <div id="main_part2">
+
+            <hr>
+            <br>
+
+             <h3>
+                Unsere Empfehlung
+            </h3>
+
+            <div id="main_part2_pic">
+
+                <div id="main_part2_pic1">
+                    <p>
+                        Wenn du auf der Suche nach einem leckeren und vegetarischen Burger bist, dann solltest du unseren Halloumi Burger ausprobieren. Er besteht aus knusprigen Grillkäse-Scheiben, cremigem Hummus und feuriger Tomatensalsa. Das Beste daran: Du kannst ihn ganz einfach in der Mikrowelle zubereiten. Unser Halloumi Burger ist ein echter Genuss für alle Sinne!
+                    </p>
+                </div>
+
+                <div id="main_part2_pic2">
+                    <a href="recipes/recipe5.html">
+                        <img src="../pictures/Burger_selber_machen_rezept.jpg" alt="food">
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- part 3 -->
+        <div id="hr_stuff">
+
+            <hr>
+            <br>
+
+            <div class="main_part3">
+
+                <div class="main_part3_pic">
+                    <img src="../pictures/Children-Family-Parents-Icon-Graphics-13707112-1.png" alt="food1" width="400px">
+                </div>
+
+                <div class="main_part3_text">
+                    <p>
+                        Kochen ist mehr als nur eine Notwendigkeit.
+                        Wenn du mit deiner Familie kochst, schaffst
+                        du nicht nur leckere Gerichte, sondern
+                        auch schöne Erinnerungen. Kochen als
+                        Familie stärkt eure Bindung, fördert eure
+                        Kreativität und macht einfach Spaß.
+                        Also schnappt euch eure Schürzen, eure
+                        Kochbücher und eure Lieblingszutaten 
+                        und lasst uns gemeinsam etwas Köstliches zaubern!
+                    </p>
+                </div>
+
+
+            </div>
+
+            <hr>
+            <br>
+
+            <div class="main_part3" id="main_part3_middle">
+
+                <div class="main_part3_text" id="main_part3_text_middle">
+                    <p>
+                        Selbst kochen ist nicht nur gut für dich, sondern auch für die Umwelt. Du sparst Verpackungsmüll, reduzierst Lebensmittelverschwendung und kannst regionale und saisonale Produkte verwenden. Selbst kochen ist ein einfacher Weg, um deinen ökologischen Fußabdruck zu verkleinern und etwas Gutes für unseren Planeten zu tun.
+                    </p>
+                </div>
+
+                <div class="main_part3_pic" id="main_part3_pic_middle">
+                    <img src="../pictures/2913116.png" alt="food2" width="400px">
+                </div>
+
+            </div>
+
+            <hr>
+            <br>
+
+            <div class="main_part3">
+
+                <div class="main_part3_pic">
+                    <img src="../pictures/6025929.png" alt="food3" width="400px">
+                </div>
+
+                <div class="main_part3_text">
+                    <p>
+                        Wenn du selbst kochst, tust du nicht nur deinem Körper, sondern auch deiner Seele etwas Gutes. Du kannst deine Kreativität ausleben, deine Sinne schärfen und deine Stimmung heben. Selbst kochen ist eine Form der Selbstfürsorge, die dich glücklicher und gesünder macht.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- footer part -->
+
+    <footer class="footer_section">
+        
+        <div class="flexbox_footer">
+
+            <div class="footer_box">
+                <ul>
+                    <li>
+                        <a href="search.html">Rezepte</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer_box">
+                <ul>
+                    <li>
+                        <a href="cookbook.html">Mein Kochbuch</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="flexbox_footer">
+
+            <div class="footer_box">
+                <a href="https://www.facebook.com/">
+                <img src="../pictures/Facebook.svg" alt="Facebook">
+                </a>
+            </div>
+
+            <div class="footer_box">
+                <a href="https://twitter.com/">
+                <img src="../pictures/Twitter.svg" alt="Twitter">
+                </a>
+            </div>
+
+            <div class="footer_box">
+                <a href="https://www.instagram.com/">
+                <img src="../pictures/Insta.svg" alt="Instagram">
+                </a>
+            </div>
+
+            <div class="footer_box">
+                <a href="https://www.tiktok.com/en/">
+                <img src="../pictures/Tiktok.svg" alt="Tiktok">
+                </a>
+            </div>
+
+        </div>
+
+        <hr>
+
+        <!-- impressum -->
+
+        <div class="flexbox_footer">
+
+            <div class="footer_box">
+
+                <li>
+                    <a href="">AGB</a>
+                </li>
+
+                <li>
+                    <a href="">Datenschutz</a>
+                </li>
+
+                <li>
+                    <a href="">Impressum</a>
+                </li>
+                
+                <li>
+                    <a href="">Nutzungsbedingungen</a>
+                </li>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+<script src="../js/main_js.js"></script>
+<script src="../js/search_js.js"></script>
+<script src="../js/login.js"></script>
+</html>

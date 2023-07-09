@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Rezepte</title>
+<link rel="stylesheet" href="../../css/main_grid.css">
+<link rel="stylesheet" href="../../css/login.css">
+<link rel="stylesheet" href="../../css/recipe.css">
+</head>
+
+<!-- problem ist das slideIndex var nicht bestimmt ist -->
+<body class="grid_container">
+
+    <!-- header part -->
+
+    <header class="header_section">
+
+        <div id="header_logo">
+            <a href="../main.html">
+            <img src="../../pictures/3448102.png" alt="Logo" style="height: 6em; width: auto;">
+            </a>
+        </div>
+
+        <div id="header_login">
+            <button type="button" class="login_button" onclick="document.getElementById('id01').style.display='block'">
+                <span>
+                    Anmelden
+                </span>
+            </button>
+        </div>
+
+    </header>
+
+
+
+    <!-- login menu -->
+    <div id="id01" class="modal">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+    
+        <form class="modal-content animate" action="/action_page.php">
+    
+            <div class="container">
+                <label for="uname"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="uname" required>
+        
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+        
+                <button type="submit">Login</button>
+                <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
+            </div>
+        
+            <div class="container" style="background-color:#f1f1f1">
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+            </div>
+
+        </form>
+    </div>
+    <!-- end of login -->
+
+
+    <nav class="nav_section">
+
+        <div class="search_container">
+            <input type="text" id="mySearch" onkeyup="filterFunction()" placeholder="Finde dein Essen.." title="Type in a food">
+            <button type="button" onclick="myFunction()"></button>
+
+            <div class="dropdown">
+                
+                <div id="myDropdown" class="dropdown-content">
+
+                    <a href="recipes/recipe1.html">Gulasch</a>
+                    <a href="recipes/recipe2.html">Reispfanne</a>
+                    <a href="recipes/recipe3.html">Käsekuchen</a>
+                    <a href="recipes/recipe4.html">Rigatoni al forno</a>
+                    <a href="recipes/recipe5.html">Burger</a>
+                    <a href="recipes/recipe6.html">Benedict</a>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="top_nav">
+            <a href="../cookbook.html">Mein Kochbuch</a>
+            <a href="../search.html">Rezepte</a>
+        </div>
+    </nav>
+
+    <!-- main section -->
+    <main class="main_section">
+
+        <div class="left_bar">
+
+            <!-- not sticky  -->
+            <div class="recipe_info">
+
+                <h1>
+                    Käsekuchen
+                </h1>
+
+                <hr>
+
+                <div class="info">
+                    <div class="info_left">
+                        <ul>
+                            <li>Arbeitszeit</li>
+                            <li>Koch-/Backzeit</li>
+                            <li>Gesamtzeit</li>
+                            <li>Aufwand</li>
+                        </ul>
+                    </div>
+    
+                    <!-- add own info -->
+                    <div class="info_right">
+                        <ul>
+                            <li>40 min</li>
+                            <li>70 min</li>
+                            <li>110 min</li>
+                            <li>Mittlerer</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <hr>
+
+                <br>
+                <h3>Nährwerte pro Portion</h3>
+
+                <div class="info">
+                    <div class="info_left">
+                        <ul>
+                            <li>Kcal</li>
+                            <li>Eiweiß</li>
+                            <li>Fett</li>
+                            <li>Kohlenhydrate </li>
+                        </ul>
+                    </div>
+    
+                    <!-- add own info  -->
+                    <div class="info_right">
+                        <ul>
+                            <li>-</li>
+                            <li>-</li>
+                            <li>-</li>
+                            <li>-</li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+
+
+            <!-- sticky list? -->
+            <div class="ingredients">
+                
+                <h2>Zutaten</h2>
+
+                <!-- if needed -->
+                <h4>Für Mürbeteig</h4>
+
+                <div class="info ingredients_info">
+                    <div class="info_left">
+                        <ul>
+                            <li>150g</li>
+                            <li>60g</li>
+                            <li>1 Pck.</li>
+                            <li>1 Prise</li>
+                            <li>100g</li>
+                        </ul>
+                    </div>
+    
+                    <div class="info_right">
+                        <ul>
+                            <li>Mehl</li>
+                            <li>Zucker</li>
+                            <li>Vanillinzucker</li>
+                            <li>Salz</li>
+                            <li>weiche Butter</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h4>Für die Füllung</h4>
+
+                <div class="info ingredients_info">
+                    <div class="info_left">
+                        <ul>
+                            <li>600ml</li>
+                            <li>2 Pck.</li>
+                            <li>1 kg</li>
+                            <li>200 g</li>
+                            <li>2</li>
+                            <li>1</li>
+                            <li>2 TL</li>
+                            <li>200 ml</li>
+                            <li>-</li>
+                        </ul>
+                    </div>
+    
+                    <div class="info_right">
+                        <ul>
+                            <li>Milch</li>
+                            <li>Vanillepuddingpulver</li>
+                            <li>Magerquark</li>
+                            <li>Zucker</li>
+                            <li>Eier (Gr. M)</li>
+                            <li>Vanilleschote</li>
+                            <li>Zitronenabrieb</li>
+                            <li>Neutrales Speiseöl</li>
+                            <li>Etwas Puderzucker</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- add Utensilien maybe  -->
+
+        </div>
+
+
+        <div class="right_bar">
+            
+            <!-- pic -->
+            <div class="recipe_pic">
+                <img src="../../pictures/der-beste-kaesekuchen-der-welt.jpg" alt="" class="recipe_img">
+            </div>
+
+            <!-- making -->
+            <div class="recipe_making">
+                
+
+                <div class="steps">
+                    <div class="steps_number">
+                        <p>1. Schritt</p>
+                    </div>
+
+                    <div>
+                        <hr>
+                    </div>
+
+                </div>
+
+         
+                <div class="recipe_text">
+                    <p>
+                        Backofen auf 200 Grad (Umluft: 180 Grad) vorheizen. Springformboden (Ø26cm) mit Backpapier belegen.
+                    </p>
+                </div>
+
+
+                <div class="steps">
+                    <div class="steps_number">
+                        <p>2. Schritt</p>
+                    </div>
+
+                    <div>
+                        <hr>
+                    </div>
+
+                </div>
+
+
+                <!-- add the ingredients -->
+                <div class="recipe_ingredients">
+
+                    <div class="recipe_ingredients_icon">
+                        <img src="../../pictures/shopping_cart.png" alt="Benötigt" width="40px">
+                    </div>
+
+                    <div class="recipe_ingredients_text">
+                        <p>150 g Mehl, 60 g Zucker, 1 Pck. Vanillinzucker, 1 Prise Salz, 100 g weiche Butter</p>
+                    </div>
+
+                </div>
+
+                
+                <div class="recipe_text">
+                    <p>
+                        Mehl mit Zucker, Vanillin-Zucker und Salz mischen. Butter zugeben. Alles zu einem Teig verknetet und einen Boden in die Springform drücken (keinen Rand hochziehen!). Boden mehrmals mit einer Gabel einstechen und für 12-14 Min. backen.
+                    </p>
+                </div>
+
+                <div class="steps">
+                    <div class="steps_number">
+                        <p>3. Schritt</p>
+                    </div>
+
+                    <div>
+                        <hr>
+                    </div>
+
+                </div>
+
+
+                <!-- add the ingredients -->
+                <div class="recipe_ingredients">
+
+                    <div class="recipe_ingredients_icon">
+                        <img src="../../pictures/shopping_cart.png" alt="Benötigt" width="40px">
+                    </div>
+
+                    <div class="recipe_ingredients_text">
+                        <p>100 ml Milch, 2 Pck. Vanillepuddingpulver, 1 kg Magerquark, 200 g Zucker, 2 Eier (Gr. M), 1 Vanilleschote </p>
+                    </div>
+
+                </div>
+
+                
+                <div class="recipe_text">
+                    <p>
+                        In der Zwischenzeit 100 ml der Milch mit Puddingpulver glattrühren. Quark mit Zucker und Eiern in einer großen Schüssel verrühren. Vanilleschote längs halbieren und das Mark ausschaben.
+                    </p>
+                </div>
+
+                <div class="steps">
+                    <div class="steps_number">
+                        <p>4. Schritt</p>
+                    </div>
+
+                    <div>
+                        <hr>
+                    </div>
+
+                </div>
+
+
+                <!-- add the ingredients -->
+                <div class="recipe_ingredients">
+
+                    <div class="recipe_ingredients_icon">
+                        <img src="../../pictures/shopping_cart.png" alt="Benötigt" width="40px">
+                    </div>
+
+                    <div class="recipe_ingredients_text">
+                        <p>500 ml Milch, 2 TL Zitronenabrieb, 200 ml neutrales Speiseöl </p>
+                    </div>
+
+                </div>
+
+                
+                <div class="recipe_text">
+                    <p>
+                        Zum Quark geben und zusammen mit Zitronenabrieb und Puddingpulver-Mischung in den Quark rühren. Zuletzt die übrige Milch (500ml) und Öl unter Rühren zugeben und alles mindestens 4 Minuten gut verrühren. Wichtig: Werden die Zutaten zu kurz verrührt, kann es sein, dass sich das Öl beim Backen absetzt.
+                    </p>
+                </div>
+
+                <div class="steps">
+                    <div class="steps_number">
+                        <p>5. Schritt</p>
+                    </div>
+
+                    <div>
+                        <hr>
+                    </div>
+
+                </div>
+
+
+                <!-- add the ingredients -->
+                <div class="recipe_ingredients">
+
+                    <div class="recipe_ingredients_icon">
+                        <img src="../../pictures/shopping_cart.png" alt="Benötigt" width="40px">
+                    </div>
+
+                    <div class="recipe_ingredients_text">
+                        <p>etwas Puderzucker</p>
+                    </div>
+
+                </div>
+
+                
+                <div class="recipe_text">
+                    <p>
+                        Backofentemperatur auf 160 Grad (Umluft: 140 Grad) reduzieren. Flüssige Quarkmasse in die heiße Springform gießen und für ca. 70 Min. backen. Auf einem Kuchenrost komplett auskühlen lassen. Ring entfernen und nach Belieben vor dem Servieren mit Puderzucker bestäuben.
+                    </p>
+                </div>
+
+
+
+
+            </div>
+
+        </div>
+
+    </main>
+    
+
+    <!-- footer part -->
+
+    <footer class="footer_section">
+        
+        <div class="flexbox_footer">
+
+            <div class="footer_box">
+                <ul>
+                    <li>
+                        <a href="../search.html">Rezepte</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer_box">
+                <ul>
+                    <li>
+                        <a href="../cookbook.html">Mein Kochbuch</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="flexbox_footer">
+
+            <div class="footer_box">
+                <a href="https://www.facebook.com/">
+                <img src="../../pictures/Facebook.svg" alt="Facebook">
+                </a>
+            </div>
+
+            <div class="footer_box">
+                <a href="https://twitter.com/">
+                <img src="../../pictures/Twitter.svg" alt="Twitter">
+                </a>
+            </div>
+
+            <div class="footer_box">
+                <a href="https://www.instagram.com/">
+                <img src="../../pictures/Insta.svg" alt="Instagram">
+                </a>
+            </div>
+
+            <div class="footer_box">
+                <a href="https://www.tiktok.com/en/">
+                <img src="../../pictures/Tiktok.svg" alt="Tiktok">
+                </a>
+            </div>
+
+        </div>
+
+        <hr>
+
+        <!-- impressum -->
+
+        <div class="flexbox_footer">
+
+            <div class="footer_box">
+
+                <li>
+                    <a href="">AGB</a>
+                </li>
+
+                <li>
+                    <a href="">Datenschutz</a>
+                </li>
+
+                <li>
+                    <a href="">Impressum</a>
+                </li>
+                
+                <li>
+                    <a href="">Nutzungsbedingungen</a>
+                </li>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+<script src="../../js/search_js.js"></script>
+<script src="../../js/login.js"></script>
+</html>

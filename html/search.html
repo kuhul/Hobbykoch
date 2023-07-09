@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Rezepte</title>
+<link rel="stylesheet" href="../css/main_grid.css">
+<link rel="stylesheet" href="../css/search.css">
+<link rel="stylesheet" href="../css/login.css">
+</head>
+
+<!-- problem ist das slideIndex var nicht bestimmt ist -->
+<body class="grid_container">
+
+    <!-- header part -->
+
+    <header class="header_section">
+
+        <div id="header_logo">
+            <a href="main.html">
+            <img src="../pictures/3448102.png" alt="Logo" style="height: 6em; width: auto;">
+            </a>
+        </div>
+
+        <div id="header_login">
+            <button type="button" class="login_button" onclick="document.getElementById('id01').style.display='block'">
+                <span>
+                    Anmelden
+                </span>
+            </button>
+        </div>
+
+    </header>
+
+
+    <!-- login menu -->
+    <div id="id01" class="modal">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+    
+        <form class="modal-content animate" action="/action_page.php">
+    
+            <div class="container">
+                <label for="uname"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="uname" required>
+        
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+        
+                <button type="submit">Login</button>
+                <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
+            </div>
+        
+            <div class="container" style="background-color:#f1f1f1">
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+            </div>
+
+        </form>
+    </div>
+    <!-- end of login -->
+
+    
+    <nav class="nav_section">
+
+        <div class="search_container">
+            <input type="text" id="mySearch" onkeyup="filterFunction()" placeholder="Finde dein Essen.." title="Type in a food">
+            <button type="button" onclick="myFunction()"></button>
+
+            <div class="dropdown">
+                
+                <div id="myDropdown" class="dropdown-content">
+
+                    <a href="recipes/recipe1.html">Gulasch</a>
+                    <a href="recipes/recipe2.html">Reispfanne</a>
+                    <a href="recipes/recipe3.html">Käsekuchen</a>
+                    <a href="recipes/recipe4.html">Rigatoni al forno</a>
+                    <a href="recipes/recipe5.html">Burger</a>
+                    <a href="recipes/recipe6.html">Benedict</a>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="top_nav">
+            <a href="cookbook.html">Mein Kochbuch</a>
+            <a href="search.html">Rezepte</a>
+        </div>
+    </nav>
+
+    
+
+    <!-- main section -->
+    <main class="main_section">
+
+        <!-- filter elements -->
+        <div id="myBtnContainer">
+
+            <h2>Filter</h2>
+            <br>
+
+            <div>
+                <button class="btn active" id="btn_all" onclick="filterSelection('alles')">Alles</button>
+            </div>
+
+
+            <!-- Ernährung -->
+            <div>
+
+                <br>
+                <h3>Ernährung</h3>
+
+                <ul class="ul_list_main">
+                    <li>
+                        <button class="btn" onclick="filterSelection('fleisch')">Fleisch</button>
+                    </li>
+    
+                    <li>
+                        <button class="btn" onclick="filterSelection('fisch')">Fisch</button>
+                    </li>
+    
+                    <li>
+                        <button class="btn" onclick="filterSelection('vegetarisch')">Vegetarisch</button>
+                    </li>
+    
+                    <li>
+                        <button class="btn" onclick="filterSelection('vegan')">Vegan</button>
+                    </li>
+                </ul>
+
+            </div>
+
+            <!-- Hauptzutaten -->
+            <div>
+
+                <br>
+                <h3>Hauptzutat</h3>
+
+                <ul class="ul_list_main">
+                    <li>
+                        <button class="btn" onclick="filterSelection('pasta')">Pasta</button>
+                    </li>
+    
+                    <li>
+                        <button class="btn" onclick="filterSelection('kartoffeln')">Kartoffeln</button>
+                    </li>
+    
+                    <li>
+                        <button class="btn" onclick="filterSelection('reis')">Reis</button>
+                    </li>
+    
+                    <li>
+                        <button class="btn" onclick="filterSelection('gemüse')">Gemüse</button>
+                    </li>
+    
+                    <li>
+                        <button class="btn" onclick="filterSelection('kürbis')">Kürbis</button>
+                    </li>
+                </ul>
+
+            </div>
+
+            <!-- Aufwand -->
+            <div>
+
+                <br>
+                <h3>Aufwand</h3>
+
+                <ul class="ul_list_main">
+                    <li>
+                        <button class="btn" onclick="filterSelection('geringer')">Geringer</button>
+                    </li>
+    
+                    <li>
+                        <button class="btn" onclick="filterSelection('mittlerer')">Mittlerer</button>
+                    </li>
+    
+                    <li>
+                        <button class="btn" onclick="filterSelection('hoher')">Hoher</button>
+                    </li>
+                </ul>
+
+            </div>
+
+            <!-- Gericht -->
+            <div>
+
+                <br>
+                <h3>Gerichtart</h3>
+
+                <ul class="ul_list_main">
+                    <li>
+                        <button class="btn" onclick="filterSelection('kuchen')">Kuchen</button>
+                    </li>
+    
+                    <li>
+                        <button class="btn" onclick="filterSelection('brot')">Brot</button>
+                    </li>
+    
+                    <li>
+                        <button class="btn" onclick="filterSelection('vorspeise')">Vorspeise</button>
+                    </li>
+
+                    <li>
+                        <button class="btn" onclick="filterSelection('hauptspeise')">Hauptspeise</button>
+                    </li>
+
+                    <li>
+                        <button class="btn" onclick="filterSelection('dessert')">Dessert</button>
+                    </li>
+
+                    <li>
+                        <button class="btn" onclick="filterSelection('beilagen')">Beilagen</button>
+                    </li>
+                </ul>
+
+            </div>
+
+
+
+        </div>
+
+        <div id="food_list" class="food_container">
+
+            
+            <!-- 1 -->
+            <div class="filterDiv fleisch hauptspeise mittlerer">
+                <a href="recipes/recipe1.html" class="recipe_all">
+                    <div class="recipe_img">
+                        <img src="../pictures/rezept1.png" alt="pic" width="250px" height="140px">
+                    </div>
+    
+                    <div class="recipe_text">
+                        Gulasch
+                    </div>
+                </a>
+            </div>
+            
+            <!-- 2 -->
+            <div class="filterDiv hauptspeise vegetarisch reis geringer">
+                <a href="recipes/recipe2.html" class="recipe_all">
+                    <div class="recipe_img">
+                        <img src="../pictures/rezept2.png" alt="pic" width="250px" height="140px">
+                    </div>
+    
+                    <div class="recipe_text">
+                        Reispfanne
+                    </div>
+                </a>
+            </div>
+
+            <!-- 3 -->
+            <div class="filterDiv vegetarisch kuchen dessert mittlerer">
+                <a href="recipes/recipe3.html" class="recipe_all">
+                    <div class="recipe_img">
+                        <img src="../pictures/rezept3.png" alt="pic" width="250px" height="140px">
+                    </div>
+    
+                    <div class="recipe_text">
+                        Käsekuchen
+                    </div>
+                </a>
+            </div>
+
+            <!-- 4 -->
+            <div class="filterDiv hauptspeise fleisch pasta mittlerer">
+                <a href="recipes/recipe4.html" class="recipe_all">
+                    <div class="recipe_img">
+                        <img src="../pictures/rezept4.png" alt="pic" width="250px" height="140px">
+                    </div>
+    
+                    <div class="recipe_text">
+                        Rigatoni al forno
+                    </div>
+                </a>
+            </div>
+
+            <!-- 5 -->
+            <div class="filterDiv hauptspeise fleisch geringer">
+                <a href="recipes/recipe5.html" class="recipe_all">
+                    <div class="recipe_img">
+                        <img src="../pictures/rezept5.png" alt="pic" width="250px" height="140px">
+                    </div>
+    
+                    <div class="recipe_text">
+                        Burger
+                    </div>
+                </a>
+            </div>
+
+            <!-- 6 -->
+            <div class="filterDiv brot">
+                <a href="recipes/recipe6.html" class="recipe_all">
+                    <div class="recipe_img">
+                        <img src="../pictures/rezept6.png" alt="pic" width="250px" height="140px">
+                    </div>
+    
+                    <div class="recipe_text">
+                        Benedict
+                    </div>
+                </a>
+            </div>
+            
+
+        </div>
+
+
+    </main>
+    
+
+    <!-- footer part -->
+
+    <footer class="footer_section">
+        
+        <div class="flexbox_footer">
+
+            <div class="footer_box">
+                <ul>
+                    <li>
+                        <a href="search.html">Rezepte</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer_box">
+                <ul>
+                    <li>
+                        <a href="cookbook.html">Mein Kochbuch</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="flexbox_footer">
+
+            <div class="footer_box">
+                <a href="https://www.facebook.com/">
+                <img src="../pictures/Facebook.svg" alt="Facebook">
+                </a>
+            </div>
+
+            <div class="footer_box">
+                <a href="https://twitter.com/">
+                <img src="../pictures/Twitter.svg" alt="Twitter">
+                </a>
+            </div>
+
+            <div class="footer_box">
+                <a href="https://www.instagram.com/">
+                <img src="../pictures/Insta.svg" alt="Instagram">
+                </a>
+            </div>
+
+            <div class="footer_box">
+                <a href="https://www.tiktok.com/en/">
+                <img src="../pictures/Tiktok.svg" alt="Tiktok">
+                </a>
+            </div>
+
+        </div>
+
+        <hr>
+
+        <!-- impressum -->
+
+        <div class="flexbox_footer">
+
+            <div class="footer_box">
+
+                <li>
+                    <a href="">AGB</a>
+                </li>
+
+                <li>
+                    <a href="">Datenschutz</a>
+                </li>
+
+                <li>
+                    <a href="">Impressum</a>
+                </li>
+                
+                <li>
+                    <a href="">Nutzungsbedingungen</a>
+                </li>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+<script src="../js/food_list_js.js"></script>
+<script src="../js/search_js.js"></script>
+<script src="../js/login.js"></script>
+</html>

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Rezepte</title>
+<link rel="stylesheet" href="../../css/main_grid.css">
+<link rel="stylesheet" href="../../css/login.css">
+<link rel="stylesheet" href="../../css/recipe.css">
+</head>
+
+<!-- problem ist das slideIndex var nicht bestimmt ist -->
+<body class="grid_container">
+
+    <!-- header part -->
+
+    <header class="header_section">
+
+        <div id="header_logo">
+            <a href="../main.html">
+            <img src="../../pictures/3448102.png" alt="Logo" style="height: 6em; width: auto;">
+            </a>
+        </div>
+
+        <div id="header_login">
+            <button type="button" class="login_button" onclick="document.getElementById('id01').style.display='block'">
+                <span>
+                    Anmelden
+                </span>
+            </button>
+        </div>
+
+    </header>
+
+
+
+    <!-- login menu -->
+    <div id="id01" class="modal">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+    
+        <form class="modal-content animate" action="/action_page.php">
+    
+            <div class="container">
+                <label for="uname"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="uname" required>
+        
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+        
+                <button type="submit">Login</button>
+                <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
+            </div>
+        
+            <div class="container" style="background-color:#f1f1f1">
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+            </div>
+
+        </form>
+    </div>
+    <!-- end of login -->
+
+
+    <nav class="nav_section">
+
+        <div class="search_container">
+            <input type="text" id="mySearch" onkeyup="filterFunction()" placeholder="Finde dein Essen.." title="Type in a food">
+            <button type="button" onclick="myFunction()"></button>
+
+            <div class="dropdown">
+                
+                <div id="myDropdown" class="dropdown-content">
+
+                    <a href="recipes/recipe1.html">Gulasch</a>
+                    <a href="recipes/recipe2.html">Reispfanne</a>
+                    <a href="recipes/recipe3.html">Käsekuchen</a>
+                    <a href="recipes/recipe4.html">Rigatoni al forno</a>
+                    <a href="recipes/recipe5.html">Burger</a>
+                    <a href="recipes/recipe6.html">Benedict</a>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="top_nav">
+            <a href="../cookbook.html">Mein Kochbuch</a>
+            <a href="../search.html">Rezepte</a>
+        </div>
+    </nav>
+
+    <!-- main section -->
+    <main class="main_section">
+
+        <div class="left_bar">
+
+            <!-- not sticky  -->
+            <div class="recipe_info">
+
+                <h1>
+                    Gulasch
+                </h1>
+
+                <hr>
+
+                <div class="info">
+                    <div class="info_left">
+                        <ul>
+                            <li>Arbeitszeit</li>
+                            <li>Koch-/Backzeit</li>
+                            <li>Gesamtzeit</li>
+                            <li>Aufwand</li>
+                        </ul>
+                    </div>
+    
+                    <!-- add own info -->
+                    <div class="info_right">
+                        <ul>
+                            <li>30min</li>
+                            <li>2h 30min</li>
+                            <li>3h</li>
+                            <li>Mittlerer</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <hr>
+
+                <br>
+                <h3>Nährwerte pro Portion</h3>
+
+                <div class="info">
+                    <div class="info_left">
+                        <ul>
+                            <li>Kcal</li>
+                            <li>Eiweiß</li>
+                            <li>Fett</li>
+                            <li>Kohlenhydrate </li>
+                        </ul>
+                    </div>
+    
+                    <!-- add own info  -->
+                    <div class="info_right">
+                        <ul>
+                            <li>-</li>
+                            <li>-</li>
+                            <li>-</li>
+                            <li>-</li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+
+
+            <!-- sticky list? -->
+            <div class="ingredients">
+                
+                <h2>Zutaten</h2>
+
+                <!-- if needed -->
+                <h4>Für 6 Portionen</h4>
+
+                <div class="info ingredients_info">
+                    <div class="info_left">
+                        <ul>
+                            <li>2 EL</li>
+                            <li>4 große</li>
+                            <li>2 EL</li>
+                            <li>1</li>
+                            <li>0,7 L</li>
+                            <li>1 kg</li>
+                            <li>300 ml</li>
+                            <li>1 TL</li>
+                            <li>1 TL</li>
+                            <li>-</li>
+                            <li>2</li>
+                        </ul>
+                    </div>
+    
+                    <div class="info_right">
+                        <ul>
+                            <li>Butterschmalz</li>
+                            <li>Zwiebel(n)</li>
+                            <li>Tomatenmark</li>
+                            <li>Karotte(n)</li>
+                            <li>Rotwein</li>
+                            <li>Rindfleisch</li>
+                            <li>Rinderbrühe</li>
+                            <li>Paprikapulver, edelsüßes</li>
+                            <li>Paprikapulver, rosenscharfes</li>
+                            <li>Salz und Pfeffer</li>
+                            <li>Lorbeerblätter</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <!-- add Utensilien maybe  -->
+
+        </div>
+
+
+        <div class="right_bar">
+            
+            <!-- pic -->
+            <div class="recipe_pic">
+                <img src="../../pictures/Gulasch-Sous-vide-min.jpg" alt="" class="recipe_img">
+            </div>
+
+            <!-- making -->
+            <div class="recipe_making">
+                
+
+                <div class="steps">
+                    <div class="steps_number">
+                        <p>1. Schritt</p>
+                    </div>
+
+                    <div>
+                        <hr>
+                    </div>
+
+                </div>
+
+
+                <!-- add the ingredients -->
+                <div class="recipe_ingredients">
+
+                    <div class="recipe_ingredients_icon">
+                        <img src="../../pictures/shopping_cart.png" alt="Benötigt" width="40px">
+                    </div>
+
+                    <div class="recipe_ingredients_text">
+                        <p>Rindfleisch, Rotwein</p>
+                    </div>
+
+                </div>
+
+                
+                <div class="recipe_text">
+                    <p>
+                        Die Zwiebeln in 0,5 cm große Würfel schneiden, Karotte und Sellerie würfeln. Alles in 2 EL Butterschmalz kräftig anbraten. Tomatenmark zugeben und andünsten bis sich eine homogene Masse bildet, das Mark darf ruhig ein bisschen ansetzen. Paprikapulver kurz mitrösten (Vorsicht, darf nicht verbrennen!). Mit dem Rotwein und der Brühe ablöschen und zum Kochen bringen. Jetzt erst das gewürfelte Fleisch dazu geben, wieder aufkochen und bei kleiner Hitze mit den Lorbeerblättern ca. 2 Stunden köcheln lassen.
+                    </p>
+                </div>
+
+
+                <div class="steps">
+                    <div class="steps_number">
+                        <p>2. Schritt</p>
+                    </div>
+
+                    <div>
+                        <hr>
+                    </div>
+
+                </div>
+
+
+                <!-- add the ingredients -->
+                <div class="recipe_ingredients">
+
+                    <div class="recipe_ingredients_icon">
+                        <img src="../../pictures/shopping_cart.png" alt="Benötigt" width="40px">
+                    </div>
+
+                    <div class="recipe_ingredients_text">
+                        <p>Salz und Pfeffer</p>
+                    </div>
+
+                </div>
+
+                
+                <div class="recipe_text">
+                    <p>
+                        Durch das Gemüse ist es normalerweise nicht nötig, die Sauce zu binden. Wenn sie allerdings zu flüssig ist, kann man das Gulasch mit 1 EL in kaltem Wasser aufgelöstem Stärkemehl andicken. Dann noch abschmecken mit Salz und Pfeffer. Die Lorbeerblätter fische ich nach Möglichkeit vor dem Servieren raus.
+                    </p>
+                </div>
+
+                <br>
+
+                <div class="recipe_text">
+                    <p>
+                        Dies ist ein Grundrezept für Gulasch, man kann es wunderbar abwandeln, indem man z. B. eine halbe Stunde vor Ende der Garzeit noch Sahne, Kartoffeln und/oder Paprikaschoten zugibt. Ich gebe auch immer noch Knoblauch dazu, den mochte aber meine Oma nicht.
+                    </p>
+                </div>
+
+
+
+
+            </div>
+
+        </div>
+
+    </main>
+    
+
+    <!-- footer part -->
+
+    <footer class="footer_section">
+        
+        <div class="flexbox_footer">
+
+            <div class="footer_box">
+                <ul>
+                    <li>
+                        <a href="../search.html">Rezepte</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer_box">
+                <ul>
+                    <li>
+                        <a href="../cookbook.html">Mein Kochbuch</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="flexbox_footer">
+
+            <div class="footer_box">
+                <a href="https://www.facebook.com/">
+                <img src="../../pictures/Facebook.svg" alt="Facebook">
+                </a>
+            </div>
+
+            <div class="footer_box">
+                <a href="https://twitter.com/">
+                <img src="../../pictures/Twitter.svg" alt="Twitter">
+                </a>
+            </div>
+
+            <div class="footer_box">
+                <a href="https://www.instagram.com/">
+                <img src="../../pictures/Insta.svg" alt="Instagram">
+                </a>
+            </div>
+
+            <div class="footer_box">
+                <a href="https://www.tiktok.com/en/">
+                <img src="../../pictures/Tiktok.svg" alt="Tiktok">
+                </a>
+            </div>
+
+        </div>
+
+        <hr>
+
+        <!-- impressum -->
+
+        <div class="flexbox_footer">
+
+            <div class="footer_box">
+
+                <li>
+                    <a href="">AGB</a>
+                </li>
+
+                <li>
+                    <a href="">Datenschutz</a>
+                </li>
+
+                <li>
+                    <a href="">Impressum</a>
+                </li>
+                
+                <li>
+                    <a href="">Nutzungsbedingungen</a>
+                </li>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+<script src="../../js/search_js.js"></script>
+<script src="../../js/login.js"></script>
+</html>

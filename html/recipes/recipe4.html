@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Rezepte</title>
+<link rel="stylesheet" href="../../css/main_grid.css">
+<link rel="stylesheet" href="../../css/login.css">
+<link rel="stylesheet" href="../../css/recipe.css">
+</head>
+
+<!-- problem ist das slideIndex var nicht bestimmt ist -->
+<body class="grid_container">
+
+    <!-- header part -->
+
+    <header class="header_section">
+
+        <div id="header_logo">
+            <a href="../main.html">
+            <img src="../../pictures/3448102.png" alt="Logo" style="height: 6em; width: auto;">
+            </a>
+        </div>
+
+        <div id="header_login">
+            <button type="button" class="login_button" onclick="document.getElementById('id01').style.display='block'">
+                <span>
+                    Anmelden
+                </span>
+            </button>
+        </div>
+
+    </header>
+
+
+
+    <!-- login menu -->
+    <div id="id01" class="modal">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+    
+        <form class="modal-content animate" action="/action_page.php">
+    
+            <div class="container">
+                <label for="uname"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="uname" required>
+        
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+        
+                <button type="submit">Login</button>
+                <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
+            </div>
+        
+            <div class="container" style="background-color:#f1f1f1">
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+            </div>
+
+        </form>
+    </div>
+    <!-- end of login -->
+
+
+    <nav class="nav_section">
+
+        <div class="search_container">
+            <input type="text" id="mySearch" onkeyup="filterFunction()" placeholder="Finde dein Essen.." title="Type in a food">
+            <button type="button" onclick="myFunction()"></button>
+
+            <div class="dropdown">
+                
+                <div id="myDropdown" class="dropdown-content">
+
+                    <a href="recipes/recipe1.html">Gulasch</a>
+                    <a href="recipes/recipe2.html">Reispfanne</a>
+                    <a href="recipes/recipe3.html">Käsekuchen</a>
+                    <a href="recipes/recipe4.html">Rigatoni al forno</a>
+                    <a href="recipes/recipe5.html">Burger</a>
+                    <a href="recipes/recipe6.html">Benedict</a>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="top_nav">
+            <a href="../cookbook.html">Mein Kochbuch</a>
+            <a href="../search.html">Rezepte</a>
+        </div>
+    </nav>
+
+    <!-- main section -->
+    <main class="main_section">
+
+        <div class="left_bar">
+
+            <!-- not sticky  -->
+            <div class="recipe_info">
+
+                <h1>
+                    Rigatoni al forno
+                </h1>
+
+                <hr>
+
+                <div class="info">
+                    <div class="info_left">
+                        <ul>
+                            <li>Arbeitszeit</li>
+                            <li>Koch-/Backzeit</li>
+                            <li>Gesamtzeit</li>
+                            <li>Aufwand</li>
+                        </ul>
+                    </div>
+    
+                    <!-- add own info -->
+                    <div class="info_right">
+                        <ul>
+                            <li>20 min</li>
+                            <li>50 min</li>
+                            <li>70 min</li>
+                            <li>Einfacher</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <hr>
+
+                <br>
+                <h3>Nährwerte pro Portion</h3>
+
+                <div class="info">
+                    <div class="info_left">
+                        <ul>
+                            <li>Kcal</li>
+                            <li>Eiweiß</li>
+                            <li>Fett</li>
+                            <li>Kohlenhydrate </li>
+                        </ul>
+                    </div>
+    
+                    <!-- add own info  -->
+                    <div class="info_right">
+                        <ul>
+                            <li>739</li>
+                            <li>39,24 g</li>
+                            <li>45,28 g</li>
+                            <li>44,01 g</li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+
+
+            <!-- sticky list? -->
+            <div class="ingredients">
+                
+                <h2>Zutaten</h2>
+
+                <!-- if needed -->
+                <h4>Für 4 Portionen</h4>
+
+                <div class="info ingredients_info">
+                    <div class="info_left">
+                        <ul>
+                            <li>1 EL</li>
+                            <li>150 g</li>
+                            <li>3 EL</li>
+                            <li>200 ml</li>
+                            <li>200 ml</li>
+                            <li>1 EL</li>
+                            <li>1 EL</li>
+                            <li>-</li>
+                            <li>-</li>
+                            <li>400 g</li>
+                            <li>150 g</li>
+                            <li>200 g</li>
+                        </ul>
+                    </div>
+    
+                    <div class="info_right">
+                        <ul>
+                            <li>Olivenöl</li>
+                            <li>Rinderhackfleisch</li>
+                            <li>Tomatenmark</li>
+                            <li>Rinderbrühe</li>
+                            <li>Sahne</li>
+                            <li>Butter</li>
+                            <li>Parmesan</li>
+                            <li>Salz</li>
+                            <li>Cayennepfeffer</li>
+                            <li>Rigatoni</li>
+                            <li>Kochschinken</li>
+                            <li>Edamer Käse</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <!-- add Utensilien maybe  -->
+
+        </div>
+
+
+        <div class="right_bar">
+            
+            <!-- pic -->
+            <div class="recipe_pic">
+                <img src="../../pictures/rigatoni-al-forno.jpg" alt="" class="recipe_img">
+            </div>
+
+            <!-- making -->
+            <div class="recipe_making">
+                
+
+                <div class="steps">
+                    <div class="steps_number">
+                        <p>1. Schritt</p>
+                    </div>
+
+                    <div>
+                        <hr>
+                    </div>
+
+                </div>
+
+
+                <!-- add the ingredients -->
+                <div class="recipe_ingredients">
+
+                    <div class="recipe_ingredients_icon">
+                        <img src="../../pictures/shopping_cart.png" alt="Benötigt" width="40px">
+                    </div>
+
+                    <div class="recipe_ingredients_text">
+                        <p>1 EL Olivenöl, 150 g Rinderhackfleisch, 3 EL Tomatenmark, 200 ml Rinderbrühe, 200 ml 	Sahne, 1 EL Butter, kalte, 1 EL Parmesan, Salz, Cayennepfeffer#</p>
+                    </div>
+
+                </div>
+
+                
+                <div class="recipe_text">
+                    <p>
+                        Für die Sauce das Olivenöl in einem Topf erhitzen. Das Hackfleisch hineingeben und unter Rühren so lange braten, bis es braun und krümelig ist. 1 EL Tomatenmark unterrühren und kurz anrösten. Mit der Rinderbrühe ablöschen, die Sahne hinzufügen und aufkochen lassen. Das restliche Tomatenmark unterrühren und die Sauce mindestens 30 Minuten köcheln lassen. Danach die Butter darin zerlassen und die Sauce mit Salz, Cayennepfeffer und Parmesan abschmecken.
+                    </p>
+                </div>
+
+
+                <div class="steps">
+                    <div class="steps_number">
+                        <p>2. Schritt</p>
+                    </div>
+
+                    <div>
+                        <hr>
+                    </div>
+
+                </div>
+
+
+                <!-- add the ingredients -->
+                <div class="recipe_ingredients">
+
+                    <div class="recipe_ingredients_icon">
+                        <img src="../../pictures/shopping_cart.png" alt="Benötigt" width="40px">
+                    </div>
+
+                    <div class="recipe_ingredients_text">
+                        <p>400 g Rigatoni</p>
+                    </div>
+
+                </div>
+
+                
+                <div class="recipe_text">
+                    <p>
+                        Die Rigatoni nach Packungsanweisung in reichlich Salzwasser sehr bissfest kochen, dabei gelegentlich umrühren. In ein Sieb abgießen und abtropfen lassen, dann wieder in den Topf geben.
+                    </p>
+                </div>
+
+                <div class="steps">
+                    <div class="steps_number">
+                        <p>3. Schritt</p>
+                    </div>
+
+                    <div>
+                        <hr>
+                    </div>
+
+                </div>
+
+
+                <!-- add the ingredients -->
+                <div class="recipe_ingredients">
+
+                    <div class="recipe_ingredients_icon">
+                        <img src="../../pictures/shopping_cart.png" alt="Benötigt" width="40px">
+                    </div>
+
+                    <div class="recipe_ingredients_text">
+                        <p>150 g Kochschinken</p>
+                    </div>
+
+                </div>
+
+                
+                <div class="recipe_text">
+                    <p>
+                        Den Schinken in 1/2 bis 1 cm breite Streifen schneiden. Die Sauce zu den Rigatoni geben und alles erhitzen. Die Schinkenstreifen unterrühren und nur kurz darin erwärmen.
+                    </p>
+                </div>
+
+                <div class="steps">
+                    <div class="steps_number">
+                        <p>4. Schritt</p>
+                    </div>
+
+                    <div>
+                        <hr>
+                    </div>
+
+                </div>
+
+                <!-- add the ingredients -->
+                <div class="recipe_ingredients">
+
+                    <div class="recipe_ingredients_icon">
+                        <img src="../../pictures/shopping_cart.png" alt="Benötigt" width="40px">
+                    </div>
+
+                    <div class="recipe_ingredients_text">
+                        <p>200 g Edamer Käse, geriebener</p>
+                    </div>
+
+                </div>
+
+                
+                <div class="recipe_text">
+                    <p>
+                        Den Backofen auf 180 °C vorheizen. Die Nudelmischung in eine große Auflaufform geben oder auf vier kleine ofenfeste Formen gleichmäßig verteilen. Den geriebenen Edamer darüber streuen. Auf der mittleren Schiene überbacken, bis der Käse goldgelb ist.
+                    </p>
+                </div>
+
+
+
+
+            </div>
+
+        </div>
+
+    </main>
+    
+
+    <!-- footer part -->
+
+    <footer class="footer_section">
+        
+        <div class="flexbox_footer">
+
+            <div class="footer_box">
+                <ul>
+                    <li>
+                        <a href="../search.html">Rezepte</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer_box">
+                <ul>
+                    <li>
+                        <a href="../cookbook.html">Mein Kochbuch</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="flexbox_footer">
+
+            <div class="footer_box">
+                <a href="https://www.facebook.com/">
+                <img src="../../pictures/Facebook.svg" alt="Facebook">
+                </a>
+            </div>
+
+            <div class="footer_box">
+                <a href="https://twitter.com/">
+                <img src="../../pictures/Twitter.svg" alt="Twitter">
+                </a>
+            </div>
+
+            <div class="footer_box">
+                <a href="https://www.instagram.com/">
+                <img src="../../pictures/Insta.svg" alt="Instagram">
+                </a>
+            </div>
+
+            <div class="footer_box">
+                <a href="https://www.tiktok.com/en/">
+                <img src="../../pictures/Tiktok.svg" alt="Tiktok">
+                </a>
+            </div>
+
+        </div>
+
+        <hr>
+
+        <!-- impressum -->
+
+        <div class="flexbox_footer">
+
+            <div class="footer_box">
+
+                <li>
+                    <a href="">AGB</a>
+                </li>
+
+                <li>
+                    <a href="">Datenschutz</a>
+                </li>
+
+                <li>
+                    <a href="">Impressum</a>
+                </li>
+                
+                <li>
+                    <a href="">Nutzungsbedingungen</a>
+                </li>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+<script src="../../js/search_js.js"></script>
+<script src="../../js/login.js"></script>
+</html>

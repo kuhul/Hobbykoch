@@ -1,0 +1,78 @@
+
+/* grid design */
+
+.main_section{
+    display: grid;
+    grid-template-rows: 10em 1fr;
+    margin-top: 1em;
+    margin-bottom: 3em;
+
+}
+
+.info_cookbook{
+    grid-row-start: 1;
+    grid-row-end: 2;
+
+    background-color: gainsboro;
+    padding: 1em;
+    background-image: url(../pictures/Bild2.jpg);
+    text-align: center;
+    color: white;
+    line-height: 8em;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+#create_list{
+    grid-row-start: 2;
+    grid-row-end: 3;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+#create_list button{
+    padding: 1em;
+    border-radius: 3px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.10);
+}
+
+.cookbook_list{
+    /* grid */
+    grid-row-start: 3;
+    grid-row-end: 4;
+
+
+    display: flex;  
+    flex-wrap: wrap;
+    align-content: first baseline ;
+}
+
+/* design of cookbook items*/
+
+.cookbook_item{
+    margin: 1em;
+    color: black;
+    text-align: center;
+    line-height: 2em;
+
+    display: grid;
+    grid-template-rows: 140px 40px;
+    grid-template-columns: 250px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.cookbook_img{
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.cookbook_text{
+    background-color: #523C22;
+    color: lightgrey;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.cookbook_item:hover .cookbook_text{
+    background-color: lightgray;
+    color: gray;
+}

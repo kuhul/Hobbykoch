@@ -1,0 +1,155 @@
+/* modal design 1 */
+
+#id02 form {
+    border: 3px solid #f1f1f1;
+    padding: 1em;
+}
+ 
+.modal_input[type=text], #select_design, textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc; 
+    display: inline-block;
+    box-sizing: border-box;
+    resize: vertical 
+}
+  
+  
+.modal_input[type=button] {
+    background-color: #499E5C;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+  
+.modal_input[type=button]:hover {
+    background-color: #499E5C;
+}
+  
+#id02 button {
+    background-color: #499E5C;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+  
+  /* Add a hover effect for buttons */
+#id02 button:hover {
+    opacity: 0.8;
+}
+  
+#id02 .cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: gray;
+}
+
+@media screen and (max-width: 300px) {
+
+    #id02 .cancelbtn {
+      width: 100%;
+    }
+} 
+
+
+/* modal design 2 */
+
+#id03 form {
+    border: 3px solid #f1f1f1;
+    padding: 3em;
+}
+
+#id03 ul{
+    list-style-type: none;
+}
+
+#id03 button {
+    background-color: #499E5C;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+  
+  /* Add a hover effect for buttons */
+#id03 button:hover {
+    opacity: 0.8;
+}
+  
+#id03 .cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: gray;
+}
+
+#modal_list{
+    display: grid;
+    grid-template-columns: auto auto;
+    margin-left: 50%;
+    margin-right: 50%;
+    margin-bottom: 3em;
+}
+
+.modal_info_left{
+    grid-column-start: 1;
+    grid-column-end: 2; 
+    margin: 1em;
+}
+
+.modal_info_right{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    text-align: end;
+    margin: 1em;
+}
+
+
+@media screen and (max-width: 300px) {
+
+    #id03 .cancelbtn {
+      width: 100%;
+    }
+} 
+
+/* modal design 3 */
+
+#id04 form {
+    border: 3px solid #f1f1f1;
+    padding: 3em;
+}
+
+#id04 button {
+    background-color: #499E5C;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+  
+  /* Add a hover effect for buttons */
+#id04 button:hover {
+    opacity: 0.8;
+}
+  
+#id04 .cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: gray;
+}
+
+@media screen and (max-width: 300px) {
+
+    #id04 .cancelbtn {
+      width: 100%;
+    }
+} 

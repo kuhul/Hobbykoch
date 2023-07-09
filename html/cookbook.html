@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Rezepte</title>
+<link rel="stylesheet" href="../css/main_grid.css">
+<link rel="stylesheet" href="../css/login.css">
+<link rel="stylesheet" href="../css/cookbook.css">
+<link rel="stylesheet" href="../css/modal_design.css">
+</head>
+
+<body class="grid_container">
+
+    <!-- header part -->
+
+    <header class="header_section">
+
+        <div id="header_logo">
+            <a href="main.html">
+            <img src="../pictures/3448102.png" alt="Logo" style="height: 6em; width: auto;">
+            </a>
+        </div>
+
+        <div id="header_login">
+            <button type="button" class="login_button" onclick="document.getElementById('id01').style.display='block'">
+                <span>
+                    Anmelden
+                </span>
+            </button>
+        </div>
+
+    </header>
+
+
+
+    <!-- login menu -->
+    <div id="id01" class="modal">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+    
+        <form class="modal-content animate" action="/action_page.php">
+    
+            <div class="container">
+                <label for="uname"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="uname" required>
+        
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+        
+                <button type="submit">Login</button>
+                <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
+            </div>
+        
+            <div class="container" style="background-color:#f1f1f1">
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+            </div>
+
+        </form>
+    </div>
+    <!-- end of login -->
+
+
+    <nav class="nav_section">
+
+        <div class="search_container">
+            <input type="text" id="mySearch" onkeyup="filterFunction()" placeholder="Finde dein Essen.." title="Type in a food">
+            <button type="button" onclick="myFunction()"></button>
+
+            <div class="dropdown">
+                
+                <div id="myDropdown" class="dropdown-content">
+
+                    <!-- add name -->
+                    <a href="recipes/recipe1.html">Gulasch</a>
+                    <a href="recipes/recipe2.html">Reispfanne</a>
+                    <a href="recipes/recipe3.html">Käsekuchen</a>
+                    <a href="recipes/recipe4.html">Rigatoni al forno</a>
+                    <a href="recipes/recipe5.html">Burger</a>
+                    <a href="recipes/recipe6.html">Benedict</a>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="top_nav">
+            <a href="cookbook.html">Mein Kochbuch</a>
+            <a href="search.html">Rezepte</a>
+        </div>
+    </nav>
+
+
+    <!-- main section -->
+    <main class="main_section">
+
+
+        <div class="info_cookbook">
+            <h1>Mein Kochbuch</h1>
+        </div>
+
+        <!-- create button modal -->
+        <div id="create_list">
+
+            <button onclick="document.getElementById('id02').style.display='block'">
+                Einkaufsliste erstellen
+            </button>
+
+            <button onclick="document.getElementById('id03').style.display='block'">
+                Meine Zutaten
+            </button>
+
+            <button onclick="document.getElementById('id04').style.display='block'">
+                Rezept erstellen
+            </button>
+        </div>
+
+        <!-- modal lists -->
+
+        <div id="id02" class="modal">
+
+            <span onclick="document.getElementById('id02').style.display='none'"
+            class="close" title="Close Modal">&times;</span>
+
+            <div class="modal_container1">
+                <form class="modal-content animate" action="action_page.php">
+              
+                    <div>
+                        <label class="modal_input" for="subject">Einkaufsliste</label>
+                        <textarea id="subject" name="subject" placeholder="Dein Einkauf..." style="height:400px"></textarea>
+                    </div>
+
+                    <div>
+                        <a href="main.html">
+                            <input class="modal_input" type="button" value="PDF erstellen">
+                        </a>
+                    </div>
+
+                    <div class="modal_container1" style="background-color:#f1f1f1">
+                        <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+                    </div>
+              
+                </form>
+            </div> 
+
+
+        </div>
+
+        <div id="id03" class="modal">
+
+            <span onclick="document.getElementById('id03').style.display='none'"
+            class="close" title="Close Modal">&times;</span>
+
+            <div class="modal_container2">
+                <form class="modal-content animate" action="action_page.php">
+              
+                    <h3>Meine Zutaten</h3>
+
+                    <div id="modal_list">
+                        <div class="modal_info_left">
+                            <ul>
+                                <li>2 EL</li>
+                                <li>4 große</li>
+                                <li>2 EL</li>
+                                <li>1</li>
+                                <li>0,7 L</li>
+                                <li>1 kg</li>
+                                <li>300 ml</li>
+                                <li>1 TL</li>
+                                <li>1 TL</li>
+                                <li>-</li>
+                                <li>2</li>
+                            </ul>
+                        </div>
+        
+                        <div class="modal_info_right">
+                            <ul>
+                                <li>Butterschmalz</li>
+                                <li>Zwiebel(n)</li>
+                                <li>Tomatenmark</li>
+                                <li>Karotte(n)</li>
+                                <li>Rotwein</li>
+                                <li>Rindfleisch</li>
+                                <li>Rinderbrühe</li>
+                                <li>Paprikapulver, edelsüßes</li>
+                                <li>Paprikapulver, rosenscharfes</li>
+                                <li>Salz und Pfeffer</li>
+                                <li>Lorbeerblätter</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label >Neue Zutaten</label>
+                        <input class="modal_input" type="text" id="fname" name="Zutaten" placeholder="Neue Zutaten...">
+                    </div>
+
+                    <div>
+                        <a href="main.html">
+                            <input class="modal_input" type="button" value="Bestätigen">
+                        </a>
+                    </div>
+                    
+                    <br>
+
+                    <div class="modal_container1" style="background-color:#f1f1f1">
+                        <button type="button" onclick="document.getElementById('id03').style.display='none'" class="cancelbtn">Cancel</button>
+                    </div>
+              
+                </form>
+            </div> 
+
+            
+            
+        </div>
+
+        <div id="id04" class="modal">
+
+            <span onclick="document.getElementById('id04').style.display='none'"
+            class="close" title="Close Modal">&times;</span>
+
+            <div class="modal_container3">
+                <form class="modal-content animate" action="action_page.php">
+              
+                    <div>
+                        <label >Rezept Name</label>
+                        <input class="modal_input" type="text" id="fname" name="Rezeptname" placeholder="Name...">
+                    </div>
+                    
+                    <div>
+                        <label for="ernährung">Ernährung</label>
+                        <select id="select_design" name="Ernährung">
+                            <option value="fleisch">Fleisch</option>
+                            <option value="fisch">Fisch</option>
+                            <option value="vegetarisch">Vegetarisch</option>
+                            <option value="vegan">Vegan</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="aufwand">Aufwand</label>
+                        <select id="select_design" name="Aufwand">
+                            <option value="geringer">Geringer</option>
+                            <option value="mittelerer">Mittelerer</option>
+                            <option value="hoher">Hoher</option>
+                        </select>
+                    </div>
+                  
+                    <div>
+                        <label class="modal_input" for="anleitung">Anleitung</label>
+                        <textarea id="anleitung" name="anleitung" placeholder="Schreibe die Anleitung..." style="height:200px"></textarea>
+                    </div>
+
+                    <div>
+                        <a href="main.html">
+                            <input class="modal_input" type="button" value="Bestätigen">
+                        </a>
+                    </div>
+
+                    <div class="modal_container1" style="background-color:#f1f1f1">
+                        <button type="button" onclick="document.getElementById('id04').style.display='none'" class="cancelbtn">Abbrechen</button>
+                    </div>
+              
+                </form>
+            </div> 
+
+            
+            
+        </div>
+
+        <!-- end of modal -->
+
+        <div class="cookbook_list">
+
+            <!-- 1 -->
+            <a href="recipes/recipe1.html" class="cookbook_item">
+                <div class="cookbook_img">
+                    <img src="../pictures/rezept1.png" alt="pic" width="250px" height="140px">
+                </div>
+
+                <div class="cookbook_text">
+                    Gulasch
+                </div>
+            </a>
+            
+            <!-- 2 -->
+            <a href="recipes/recipe2.html" class="cookbook_item">
+                <div class="cookbook_img">
+                    <img src="../pictures/rezept2.png" alt="pic" width="250px" height="140px">
+                </div>
+
+                <div class="cookbook_text">
+                    Reispfanne
+                </div>
+            </a>
+
+            <!-- 3 -->
+            <a href="recipes/recipe3.html" class="cookbook_item">
+                <div class="cookbook_img">
+                    <img src="../pictures/rezept3.png" alt="pic" width="250px" height="140px">
+                </div>
+
+                <div class="cookbook_text">
+                    Käsekuchen
+                </div>
+            </a>
+            
+            <!-- 4 -->
+            <a href="recipes/recipe4.html" class="cookbook_item">
+                <div class="cookbook_img">
+                    <img src="../pictures/rezept4.png" alt="pic" width="250px" height="140px">
+                </div>
+
+                <div class="cookbook_text">
+                    Rigatoni al forno
+                </div>
+            </a>
+
+
+
+        </div>
+
+
+
+    </main>
+    
+
+    <!-- footer part -->
+
+    <footer class="footer_section">
+        
+        <div class="flexbox_footer">
+
+            <div class="footer_box">
+                <ul>
+                    <li>
+                        <a href="search.html">Rezepte</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer_box">
+                <ul>
+                    <li>
+                        <a href="cookbook.html">Mein Kochbuch</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="flexbox_footer">
+
+            <div class="footer_box">
+                <a href="https://www.facebook.com/">
+                <img src="../pictures/Facebook.svg" alt="Facebook">
+                </a>
+            </div>
+
+            <div class="footer_box">
+                <a href="https://twitter.com/">
+                <img src="../pictures/Twitter.svg" alt="Twitter">
+                </a>
+            </div>
+
+            <div class="footer_box">
+                <a href="https://www.instagram.com/">
+                <img src="../pictures/Insta.svg" alt="Instagram">
+                </a>
+            </div>
+
+            <div class="footer_box">
+                <a href="https://www.tiktok.com/en/">
+                <img src="../pictures/Tiktok.svg" alt="Tiktok">
+                </a>
+            </div>
+
+        </div>
+
+        <hr>
+
+        <!-- impressum -->
+
+        <div class="flexbox_footer">
+
+            <div class="footer_box">
+
+                <li>
+                    <a href="">AGB</a>
+                </li>
+
+                <li>
+                    <a href="">Datenschutz</a>
+                </li>
+
+                <li>
+                    <a href="">Impressum</a>
+                </li>
+                
+                <li>
+                    <a href="">Nutzungsbedingungen</a>
+                </li>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+<script src="../js/search_js.js"></script>
+<script src="../js/login.js"></script>
+</html>

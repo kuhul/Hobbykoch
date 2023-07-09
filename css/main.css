@@ -1,0 +1,239 @@
+
+
+/* main part */
+
+main{
+    margin: 2em;
+    display: grid;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+  /* Position the image container (needed to position the left and right arrows) */
+.container {
+    position: relative;
+    justify-self: center;
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-top: 3em;
+    margin-bottom: 3em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+  
+  /* Hide the images by default */
+.mySlides {
+    display: none;
+  }
+  
+  /* Add a pointer when hovering over the thumbnail images */
+.cursor {
+    cursor: pointer;
+}
+  
+  /* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+}
+  
+  /* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+  
+  /* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+  
+  /* Number text (1/3 etc) */
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+  
+  /* Container for image text */
+.caption-container {
+    text-align: center;
+    background-color: #523C22;
+    padding: 2px 16px;
+    color: white;
+}
+  
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+  
+  /* Six columns side by side */
+.column {
+    float: left;
+    width: 16.66%;
+}
+  
+  /* Add a transparency effect for thumnbail images */
+.demo {
+    opacity: 0.6;
+}
+  
+.active, .demo:hover {
+    opacity: 1;
+}
+
+/* part2 */
+
+#hr_stuff > hr {
+    color: lightgray;
+    filter: brightness(100%);
+}
+
+#main_part2{
+   padding: 5%; 
+}
+
+#main_part2_pic{
+    padding-top: 1em;
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+
+#main_part2 p{
+    word-wrap: break-word;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    margin: 3em;
+    font-size: large;
+}
+
+#main_part2 img{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    max-width: 100%;
+    max-height: 100%;
+    padding: 1em;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.main_part3{
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+
+.main_part3_pic{
+    max-width: 100%;
+    max-height: 100%;
+    overflow: clip;
+    grid-column-start: 1;
+    grid-column-end: 2;
+
+    display: block;
+    padding: 1em;
+    /* width: 80%; */
+    /* height: 50%; */
+}
+
+.main_part3_pic img{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 1em;
+}
+
+
+.main_part3_text{
+    grid-column-start: 2;
+    grid-column-end: 3;
+
+    margin-top: 2em;
+    margin-bottom: 2em;
+    font-size: 20px;
+    padding: 1em;
+}
+
+#main_part3_middle{
+    grid-template-columns: 60% 40%;
+}
+
+#main_part3_text_middle{
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+#main_part3_pic_middle{
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+@media screen and (max-width: 1400px) {
+
+    #main_part2_pic{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+    }
+
+    #main_part2_pic1{
+        grid-column: 1;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+
+    #main_part2_pic2{
+        grid-column: 1;
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
+
+    #main_part2 p{
+        margin: 0;
+    }
+
+
+    .main_part3{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .main_part3_pic{
+        grid-column: 1;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+    
+    .main_part3_text{
+        grid-column: 1;
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
+
+    #main_part3_middle{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    #main_part3_text_middle{
+        grid-column: 1;
+    }
+
+    #main_part3_pic_middle{
+        grid-column: 1;
+    }
+
+}
